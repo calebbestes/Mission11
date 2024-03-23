@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using WebApplication1.Models
+@model IQueryable<Book>
+
+<div>
+    <h1>AMAZON BOOKSTORE</h1>
+    @foreach (Book b in Model)
+    {
+        <h3>@b.Title</h3>
+        <ul>
+            <li>@b.Author</li>
+            <li>@b.Category</li>
+            <li>@b.Classification</li>
+            <li>@b.Isbn</li>
+            <li>@b.Price</li>
+            <li>@b.Publisher</li>
+            <li>@b.PageCount</li>
+        </ul>
+    }
+</div>
+
+<a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a>
+<a asp-controller="Home" asp-action="Index" asp-route-pageNum="2">2</a>
+<a asp-controller="Home" asp-action="Index" asp-route-pageNum="3">3</a>
